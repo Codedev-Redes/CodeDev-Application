@@ -21,4 +21,15 @@ export class StudentService {
       )
     );
   }
+  
+  createStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(`${environment.apiURL}/students`, student)
+      .pipe(
+        catchError((error) => {
+          console.error('Error al crear el estudiante', error);
+          throw error;
+        }
+      )
+    );
+  }
 }

@@ -1,1 +1,76 @@
-<p>signup works!</p>
+<div class="canvas">
+    <div class="main-div">
+        <div class="title">
+            <h2>Registrate</h2>
+        </div>
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="signup()">
+            <div class="name-div">
+                <div>
+                    <input type="text" placeholder="nombre" formControlName="name">
+                    <div class="error-div">
+                        <ng-container *ngIf="controlTouched('name') && controlHasError('name', 'required')">
+                            Ingrese su correo electrónico
+                        </ng-container>
+                        <ng-container *ngIf="controlTouched('name') && controlHasError('name', 'minLenght')">
+                            Ingrese un correo electrónico válido
+                        </ng-container>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="apellido" formControlName="last_name">
+                    <div class="error-div">
+                        <ng-container *ngIf="controlTouched('last_name') && controlHasError('last_name', 'required')">
+                            Ingrese su contraseña
+                        </ng-container>
+                        <ng-container *ngIf="controlTouched('last_name') && controlHasError('last_name', 'minLenght')">
+                            Ingrese una contraseña válida
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="info-div">
+                <div>
+                    <input type="text" placeholder="correo electronico" formControlName="email">
+                    <div class="error-div">
+                        <ng-container *ngIf="controlTouched('email') && controlHasError('email', 'required')">
+                            Ingrese su correo electrónico
+                        </ng-container>
+                        <ng-container *ngIf="controlTouched('email') && controlHasError('email', 'minLenght')">
+                            Ingrese un correo electrónico válido
+                        </ng-container>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="teléfono" formControlName="phone">
+                    <div class="error-div">
+                        <ng-container *ngIf="controlTouched('phone') && controlHasError('phone', 'required')">
+                            Ingrese su contraseña
+                        </ng-container>
+                        <ng-container *ngIf="controlTouched('phone') && controlHasError('phone', 'minLenght')">
+                            Ingrese una contraseña válida
+                        </ng-container>
+                    </div>
+                </div>
+                <div>
+                    <input type="password" placeholder="contraseña" formControlName="password">
+                    <div class="error-div">
+                        <ng-container *ngIf="controlTouched('password') && controlHasError('password', 'required')">
+                            Ingrese su contraseña
+                        </ng-container>
+                        <ng-container *ngIf="controlTouched('password') && controlHasError('password', 'minLenght')">
+                            Ingrese una contraseña válida
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="option-div">
+                    <button type="submit" [disabled]="!form.valid" routerLink="courses">
+                        Confirmar
+                    </button>
+                    <a routerLink="login">
+                      Ya tienes una cuenta? 
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
