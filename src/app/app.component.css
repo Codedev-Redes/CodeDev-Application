@@ -1,3 +1,7 @@
+.app-container::-webkit-scrollbar {
+	display: none;
+}
+
 .app-container{
     margin: 0;
     padding: 0;

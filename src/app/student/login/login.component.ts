@@ -41,7 +41,7 @@ export class LoginComponent {
       next: (student) => {
         if (student.password === formValue.password) {
           console.log("Bienvenido", student);
-          // this.router.navigate(['']);
+          this.router.navigate(['/courses']);
         }
       },
       error: (error) => {

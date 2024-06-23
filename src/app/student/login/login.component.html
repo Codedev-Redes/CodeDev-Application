@@ -3,7 +3,6 @@
         <div class="title">
             <h2>Iniciar Sesión</h2>
         </div>
-        
         <form autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
             <input type="text" placeholder="correo electronico" formControlName="email">
             <div class="error-div">
@@ -23,12 +22,14 @@
                     Ingrese una contraseña válida
                 </ng-container>
             </div>
-            <div class="button-div">
-                <button type="submit" [disabled]="!form.valid">
+            <div class="option-div">
+                <button type="submit" [disabled]="!form.valid" routerLink="courses">
                     Confirmar
                 </button>
+                <a routerLink="">
+                  Aún no tienes una cuenta?  
+                </a>
             </div>
         </form>
-   
     </div>
 </div>
