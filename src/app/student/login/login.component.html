@@ -1,0 +1,34 @@
+<div class="canvas">
+    <div class="main-div">
+        <div class="title">
+            <h2>Iniciar Sesión</h2>
+        </div>
+        
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
+            <input type="text" placeholder="correo electronico" formControlName="email">
+            <div class="error-div">
+                <ng-container *ngIf="controlTouched('email') && controlHasError('email', 'required')">
+                    Ingrese su correo electrónico
+                </ng-container>
+                <ng-container *ngIf="controlTouched('email') && controlHasError('email', 'minLenght')">
+                    Ingrese un correo electrónico válido
+                </ng-container>
+            </div>
+            <input type="password" placeholder="contraseña" formControlName="password">
+            <div class="error-div">
+                <ng-container *ngIf="controlTouched('password') && controlHasError('password', 'required')">
+                    Ingrese su contraseña
+                </ng-container>
+                <ng-container *ngIf="controlTouched('password') && controlHasError('password', 'minLenght')">
+                    Ingrese una contraseña válida
+                </ng-container>
+            </div>
+            <div class="button-div">
+                <button type="submit" [disabled]="!form.valid">
+                    Confirmar
+                </button>
+            </div>
+        </form>
+   
+    </div>
+</div>
