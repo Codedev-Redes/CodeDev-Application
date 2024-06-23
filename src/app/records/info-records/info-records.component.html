@@ -1,0 +1,26 @@
+<div class="table-session">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre de la grabación</th>
+                <th>Fecha de Inicio</th>
+                <th>Tamaño</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-sesiones">
+            <tr *ngFor="let video of videos; trackBy: trackById">
+                <td>{{ video.filename }}</td>
+                <td>{{ video.uploadDate }}</td>
+    
+                <td>{{ video.size }} MB</td>
+                <td>
+                    <button (click)="handleVideo(video._id)">Ver video online</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="videoUrl">
+        <video [src]="videoUrl" controls width="1000" height="200"></video>
+    </div>
+</div>
