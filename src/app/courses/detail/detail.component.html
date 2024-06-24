@@ -1,0 +1,62 @@
+<div class="canvas">
+    <div class="main-div">
+        <div class="course-div">
+            <div class="course-title">
+                <p>
+                    {{course?.name}}
+                </p>
+            </div>
+            <div class="course-image">
+                <img src="assets/course.png" alt="">
+            </div>
+            <div class="course-information">
+                <div class="course-description">
+                    <p>
+                        {{ course?.description }}: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi perferendis, illum minima ex voluptatibus quo, enim, ipsa culpa maiores corrupti at vitae repellat necessitatibus sit sapiente accusamus tempore mollitia sed.
+                        Amet, tenetur dolorem. Temporibus consequuntur blanditiis incidunt nihil impedit ipsum. Cum fugiat, neque exercitationem hic minus sed explicabo doloribus qui voluptatem adipisci provident ipsam laboriosam voluptas unde harum doloremque ea.
+                        Iusto commodi saepe autem rerum quidem laborum possimus sapiente consequatur accusamus minima quo eos eum molestias hic similique dolores sed assumenda, ut iure atque asperiores harum ullam impedit ea. Ipsam?
+                        Nobis ipsum autem quos veniam at inventore eum, eligendi blanditiis dignissimos, amet eaque nulla excepturi vero beatae ex sequi tenetur animi consectetur ad nisi dolor. Quam quos distinctio voluptatem odio!
+                        Corporis, velit nisi. Maiores ducimus voluptas ab, nesciunt quidem blanditiis nulla nobis repellat illum corporis quo, vel tenetur odio reiciendis iusto error ullam. Veritatis inventore commodi praesentium iste. Ab, eligendi?
+                        Animi excepturi accusamus iure voluptas? Velit assumenda optio est tenetur quas. Autem aspernatur voluptate, nobis repellat fugiat quas, aliquid voluptas cupiditate ut sapiente harum blanditiis laboriosam corporis optio quasi non!
+                        Odio eum, nesciunt odit vel voluptatum obcaecati consectetur aspernatur sunt id ipsam voluptate consequuntur accusamus nostrum quisquam eius porro sed. Commodi quos, omnis porro placeat dolores asperiores libero laudantium nihil?
+                        Saepe laudantium voluptatem qui placeat nihil voluptatibus iste exercitationem minus est aliquam, accusantium, assumenda, vero voluptas consequatur a mollitia possimus laborum autem nam numquam nobis deserunt quisquam incidunt quam. Voluptate.
+                        Corrupti, natus quia magni porro exercitationem eius non cumque a facere ipsum libero, fugit alias atque quam vel dignissimos nemo, aliquam nisi saepe voluptatem! Fugiat, eius voluptatem? Iusto, quae officia.
+                        Eos provident iste earum architecto cupiditate sint soluta, quia unde a nisi mollitia eveniet quidem autem non nemo deserunt laudantium quibusdam quisquam facere cum magnam asperiores omnis dignissimos error. Id.
+                    </p>
+                </div>
+                <div class="course-price">
+                    <p>
+                        Precio: {{ course?.course_price }}
+                    </p>
+                </div>
+            </div>
+        </div> 
+        <div class="module-div">
+            <div class="module-title">
+                <p>
+                    Módulos
+                </p>
+            </div>
+            <div class="module-list">
+                @if (modules.length == 0){
+                    <p>
+                        No hay módulos
+                    </p>
+                }
+                @for (module of modules; track module.id) {
+                    <div class="module-item">
+                        <p>
+                            {{ module.title }}
+                        </p>
+                        <p>
+                            {{ module.name }}
+                        </p>
+                        <p>
+                            {{ module.description }}
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
