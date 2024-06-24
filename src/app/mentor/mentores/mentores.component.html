@@ -1,0 +1,32 @@
+<div class="canvas">
+    <div class="main-div">
+        <div class="mentors-div">
+            @if (mentors.length == 0){
+                <p>
+                    No hay mentores
+                </p>
+            }
+            @for (mentor of mentors; track mentor._id) {
+                <div class="mentor-item">
+                    <div class="mentor-image">
+                        <img src="assets/Profile.png" alt="">
+                    </div>
+                    <div class="mentor-information">
+                        <p>
+                            {{ mentor.name }} {{ mentor.last_name }}
+                        </p>
+                        <p>
+                            <span>CONTACTO:</span>  {{ mentor.email }}
+                        </p>
+                        <p>
+                            <span>ESPECIALIDAD:</span>  {{ mentor.speciality }}
+                        </p>
+                        <p>
+                            <span>MODALIDAD DE TRABAJO:</span>  {{ mentor.modality }}
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

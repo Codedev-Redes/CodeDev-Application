@@ -6,27 +6,27 @@
     width: 100%;
 }
 
-.main-div{
+.main-div {
     margin: 2rem 3rem 2rem 3rem;
     display: flex;
     flex-direction: row;
 }
 
-.course-div{
+.course-div {
     width: 90%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.course-description{
+.course-description {
     p{
         margin-right: 5rem;
         text-align: justify;
     }
 }
 
-.course-title{
+.course-title {
     font-size: 2rem;
     font-weight: bold;
 }
@@ -36,5 +36,49 @@
         width: 90%;
         height: 30rem;
         border-radius: 10px;
+    }
+}
+
+.course-price {
+    button {
+        font-weight: 2rem;
+        background-color: #FFA500;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #FF8C00;
+        transform: scale(1.1);
+    }
+}
+
+.module-div {
+    margin: 5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.module-item {
+    border: 1px solid #9d9d9d;
+    border-radius: 5px;
+    background-color:#e1e1e1;
+    padding: 1rem;
+    p:nth-child(1) {
+        font-weight: bold;
     }
 }

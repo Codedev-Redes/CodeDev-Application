@@ -28,3 +28,9 @@ export interface ModulesId {
     name: string;
     description: string;
 }
+
+export interface CategoriesId {
+    _id: string;
+    id: number;
+    name: string;
+}
