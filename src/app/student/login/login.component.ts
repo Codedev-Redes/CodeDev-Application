@@ -41,6 +41,7 @@ export class LoginComponent {
       next: (student) => {
         if (student.password === formValue.password) {
           console.log("Bienvenido", student);
+          localStorage.setItem('student', JSON.stringify(student));
           this.router.navigate(['/courses']);
         }
       },

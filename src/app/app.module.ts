@@ -12,7 +12,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   declarations: [
     AppComponent,
     ContentComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
