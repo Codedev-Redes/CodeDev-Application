@@ -25,11 +25,12 @@
                     </p>
                 </div>
                 <div class="course-price">
-                    <p>
-                        Precio: {{ course?.course_price }}
-                    </p>
+                    <button>
+                        PAGAR AHORA - {{ course?.course_price }}$
+                    </button>
                 </div>
             </div>
+            <br>
         </div> 
         <div class="module-div">
             <div class="module-title">
@@ -46,11 +47,9 @@
                 @for (module of modules; track module.id) {
                     <div class="module-item">
                         <p>
-                            {{ module.title }}
-                        </p>
-                        <p>
                             {{ module.name }}
                         </p>
+                        <br>
                         <p>
                             {{ module.description }}
                         </p>
