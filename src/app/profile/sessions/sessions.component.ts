@@ -55,7 +55,6 @@ export class SessionsComponent implements OnInit {
                 end_date: mentorship.end_date,
                 url: session.url,
               };
-              console.log('InfoShow', infoShowInstance);
               this.data.push(infoShowInstance);
             } else {
               console.error(`No se encontró mentor con ID ${mentorship.mentors_id}`);
@@ -63,6 +62,7 @@ export class SessionsComponent implements OnInit {
           } else {
             console.error(`No se encontró mentoria con ID ${session.mentorship_id}`);
           }
+          console.log('InfoShow', this.data);
         });
       },
       error: (error) => {
