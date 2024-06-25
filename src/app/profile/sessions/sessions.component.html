@@ -1,7 +1,27 @@
-<p>sessions works!</p>
-<button (click)="handleSessions()">Probando</button>
-<button (click)="handleSessions2()">Probando2</button>
-<!--
-getmentor by id
-get sessionbystudent
--->
+<div class="canvas">
+    <div class="main-div">
+        <div class="title">
+            <p>Sesiones</p>
+        </div>
+
+        <div class="courses-div">
+            @if (data.length == 0) {
+            <p class="no-courses-message">No hay cursos disponibles</p>
+            }
+            @for (session of data; track session._id) {
+            <div class="card">
+                <div class="card-title">
+                    <p>{{ session.topic }}</p>
+                </div>
+                <div class="card-description">
+                    <p>Mentor: {{ session.nameMentor }} {{ session.lastNameMentor }}</p>
+                    <p>Modalidad: {{ session.type }}</p>
+                    <p>Fecha de inicio: {{ parseDateTime(session.start_date) }}</p>
+                    <p>Fecha de fin: {{ parseDateTime(session.end_date) }}</p>
+                </div>
+                <button (click)="navigateToUrl(session.url)" class="button-div">Ingresar</button>
+            </div>
+            }
+        </div>
+    </div>
+</div>

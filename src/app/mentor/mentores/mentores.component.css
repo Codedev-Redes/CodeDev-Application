@@ -10,6 +10,17 @@
     margin: 1rem 2rem 1rem 2rem;
 }
 
+.title{
+    margin: 3rem 0 1rem 0;
+    text-align: center;
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #000000d1;
+    }
+}
+
 .mentors-div {
     margin: 4rem 0 4rem 0;
     display: grid;

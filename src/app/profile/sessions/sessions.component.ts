@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../services/session.service';
 import { InfoShow, MentorResponse, MentorshipResponse, SessionResponse } from '../interaces/sessions.interface';
 import { forkJoin } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sessions',
@@ -15,7 +16,8 @@ export class SessionsComponent implements OnInit {
   mentors!: MentorResponse[]
   data: InfoShow[] = [];
   constructor(
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -43,6 +45,7 @@ export class SessionsComponent implements OnInit {
             //console.log('Mentor', mentor);
             if (mentor) {
               const infoShowInstance: InfoShow = {
+                _id: session._id,
                 nameMentor: mentor.name,
                 lastNameMentor: mentor.last_name,
                 email: mentor.email,
@@ -72,24 +75,32 @@ export class SessionsComponent implements OnInit {
 
   }
 
+  parseDateTime(dateTimeString: string) {
+    const date = new Date(dateTimeString);
 
-  handleSessions() {
-   
-  }
+    const day = date.getUTCDate();
+    const month = date.getUTCMonth() + 1; // Months are zero-indexed in JavaScript
+    const year = date.getUTCFullYear();
+    const hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
+
+    // Formatear con ceros a la izquierda si es necesario
+    const dayStr = day < 10 ? '0' + day : day;
+    const monthStr = month < 10 ? '0' + month : month;
+    const hoursStr = hours < 10 ? '0' + hours : hours;
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+
+    // Formato deseado: "DD-MM-YYYY HH:MM"
+    const formattedDateTime = `${dayStr}-${monthStr}-${year} ${hoursStr}:${minutesStr}`;
+    console.log('Fecha formateada:', formattedDateTime);
+    return formattedDateTime;
+}
 
   handleSessions2() {
     console.log(this.data);
   }
 
-  handleSessions3() {
-    //this.sessionService.getMentorById("6678a927b2a2eb17ba6c2c2f").subscribe({
-    //  next: (mentor) => {
-    //    this.mentor = mentor;
-    //    console.log('Mentor', mentor);
-    //  },
-    //  error: (error) => {
-    //    console.error('Error al obtener el mentor', error);
-    //  }
-    //});
+  navigateToUrl(url: string) {
+    window.location.href = url;
   }
 }

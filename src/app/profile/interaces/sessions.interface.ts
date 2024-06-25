@@ -25,6 +25,7 @@ export interface MentorResponse{
 }
 
 export interface InfoShow{
+    _id: string;
     nameMentor: string;
     lastNameMentor: string;
     email: string;
