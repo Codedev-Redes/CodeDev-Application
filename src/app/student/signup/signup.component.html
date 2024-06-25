@@ -9,10 +9,10 @@
                     <input type="text" placeholder="nombre" formControlName="name">
                     <div class="error-div">
                         <ng-container *ngIf="controlTouched('name') && controlHasError('name', 'required')">
-                            Ingrese su correo electrónico
+                            Ingrese su nombre.
                         </ng-container>
                         <ng-container *ngIf="controlTouched('name') && controlHasError('name', 'minLenght')">
-                            Ingrese un correo electrónico válido
+                            Ingrese un nombre con más de 8 dígitos.
                         </ng-container>
                     </div>
                 </div>
@@ -20,10 +20,10 @@
                     <input type="text" placeholder="apellido" formControlName="last_name">
                     <div class="error-div">
                         <ng-container *ngIf="controlTouched('last_name') && controlHasError('last_name', 'required')">
-                            Ingrese su contraseña
+                            Ingrese su apellido
                         </ng-container>
                         <ng-container *ngIf="controlTouched('last_name') && controlHasError('last_name', 'minLenght')">
-                            Ingrese una contraseña válida
+                            Ingrese un apellido con más de 8 dígitos.
                         </ng-container>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             Ingrese su correo electrónico
                         </ng-container>
                         <ng-container *ngIf="controlTouched('email') && controlHasError('email', 'minLenght')">
-                            Ingrese un correo electrónico válido
+                            Ingrese un correo electrónico con más de 8 dígitos.
                         </ng-container>
                     </div>
                 </div>
@@ -44,10 +44,10 @@
                     <input type="text" placeholder="teléfono" formControlName="phone">
                     <div class="error-div">
                         <ng-container *ngIf="controlTouched('phone') && controlHasError('phone', 'required')">
-                            Ingrese su contraseña
+                            Ingrese su número de teléfono
                         </ng-container>
                         <ng-container *ngIf="controlTouched('phone') && controlHasError('phone', 'minLenght')">
-                            Ingrese una contraseña válida
+                            Ingrese un número de teléfono con más de 8 dígitos.
                         </ng-container>
                     </div>
                 </div>
@@ -55,10 +55,10 @@
                     <input type="password" placeholder="contraseña" formControlName="password">
                     <div class="error-div">
                         <ng-container *ngIf="controlTouched('password') && controlHasError('password', 'required')">
-                            Ingrese su contraseña
+                            Ingrese su contraseña.
                         </ng-container>
                         <ng-container *ngIf="controlTouched('password') && controlHasError('password', 'minLenght')">
-                            Ingrese una contraseña válida
+                            Ingrese una contraseña con más de 8 dígitos.
                         </ng-container>
                     </div>
                 </div>
