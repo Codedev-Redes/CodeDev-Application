@@ -56,4 +56,26 @@ export class CourseService {
       )
     );
   }
+
+  getCategorieById(id: string): Observable<CourseId> {
+    return this.http.get<CourseId>(`${environment.apiURL}/categories/${id}`)
+      .pipe(
+        catchError((error) => {
+          console.error('Error al obtener la categoria por id', error);
+          throw error;
+        }
+      )
+    );
+  }
+
+  getCoursesByCategoryId(id: string): Observable<CourseId[]> {
+    return this.http.get<CourseId[]>(`${environment.apiURL}/courses/${id}/categories`)
+      .pipe(
+        catchError((error) => {
+          console.error('Error al obtener los cursos por categoria', error);
+          throw error;
+        }
+      )
+    );
+  }
 }

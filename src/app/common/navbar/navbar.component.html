@@ -30,25 +30,30 @@
                       </li>
                       <li class="nav-item dropdown">
                         <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="dropbtn btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Categorias
                             </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <ul class="dropdown-content">
+                              @if ( categories.length == 0){
+                                <li><a>Action</a></li>
+                              }
+                              @for (category of categories; track category.id) {
+                                <li><a>{{ category.name }}</a></li>
+                              }
                             </ul>
                           </div>
                       </li>
-                      
                     </ul>
                   </div>
                 </div>
             </nav>
             <div class="profile-div">
-                <a href="#">
-                    <img src="assets/Profile.png" alt="profile">
-                </a>
+              <a class="btn btn-secondary nav-link" (click) = "logOut()">
+                Cerrar Sesión
+              </a>
+              <a>
+                <img src="assets/Profile.png" alt="profile">
+              </a>
             </div>
       </div>
     </div>
