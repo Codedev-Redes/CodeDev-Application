@@ -6,16 +6,28 @@ th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
+    font-size: 1.1rem;
 }
 th {
     background-color: #f2f2f2;
-    text-align: center;
+    text-align: center;  
 }
 
 ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.title{
+    margin: 4rem 0 4rem 0;
+    text-align: center;
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #000000d1;
+    }
 }
 
 .table-session{
